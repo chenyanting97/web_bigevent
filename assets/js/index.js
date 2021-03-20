@@ -1,0 +1,14 @@
+$(function () {
+  getUserInfo()
+})
+// 获取用户的基本信息
+function getUserInfo() {
+  $.ajax({
+    url: '/my/userinfo',
+    method: 'GET',
+    // 获取头部配置对象
+    headers: {
+      Authorization: localStorage.getItem('token')
+    }
+  })
+}
